@@ -6,8 +6,25 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   ingressClassName: traefik
-  defaultBackend:
-    service:
-      name: playground
-      port:
-        number: 80
+  rules:
+    - host: iot.argocd
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd
+                port:
+                  number: 443
+    - host: ""
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: playground
+                port:
+                  number: 80
+        
