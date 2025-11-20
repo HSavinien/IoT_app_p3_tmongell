@@ -7,7 +7,6 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: iot.playground
       http:
         paths:
           - path: /
