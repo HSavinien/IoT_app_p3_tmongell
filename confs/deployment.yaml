@@ -12,8 +12,8 @@ spec:
       labels:
         app: playground
     spec:
-      imagePullSecrets:
-        - name: dockerhub-auth
+    #  imagePullSecrets:
+    #    - name: dockerhub-auth
       containers:
       - name: playground
         image: wil42/playground:v1 
