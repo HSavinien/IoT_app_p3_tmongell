@@ -12,7 +12,8 @@ spec:
       - iot.playground
       secretName: shared-tls
   rules:
-    - http:
+    - host: iot.playground
+      http:
         paths:
           - path: /
             pathType: Prefix
@@ -20,4 +21,4 @@ spec:
               service:
                 name: playground
                 port:
-                  number: 80
+                  number: 8888
